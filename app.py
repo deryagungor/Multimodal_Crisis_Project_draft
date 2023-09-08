@@ -39,15 +39,10 @@ prediction = response.json()
 
 pred = prediction['label']
 
-st.header(f'This tweet is not: {pred}')
-####
-
-      
-        # Display the API response
+# Display the API response
         if response.status_code == 200:
             result = response.json()
-            st.success("Prediction Result:")
+            st.success(f'This tweet is not: {pred}')
             st.json(result)
         else:
             st.error("Prediction failed. Please try again later.")
-
